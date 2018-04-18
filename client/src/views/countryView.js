@@ -10,8 +10,8 @@ CountryView.prototype.addCountry = function (country) {
 CountryView.prototype.render = function (country) {
   const ul = document.querySelector('#bucketCountries');
   const li = document.createElement('li');
-  li.innerText = country.name;
-  ul.appendChild("li")
+  li.innerText = country;
+  ul.appendChild(li)
 };
 
 CountryView.prototype.renderList = function (country) {
