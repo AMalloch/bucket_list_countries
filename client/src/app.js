@@ -20,16 +20,16 @@ const getCountry = function (countries) {
   const selectedCountry =document.querySelector('#countryDropDown');
   selectedCountry.addEventListener('change',function() {
     let country = countries[this.value];
-    return country;
+    countryName =  country.name;
+    return countryName;
   })
 }
 
 
 const saveButtonClicked = function(getCountry){
-  const countryToSave = getCountry;
-  debugger;
+  const countryToSave = countryName;
   request.post(saveButtonClicked, countryToSave);
-  countryView.addCountry(countryToSave);
+  countryView.addCountry(countryToSave)
 }
 
 
