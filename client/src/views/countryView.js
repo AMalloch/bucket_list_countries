@@ -14,6 +14,11 @@ CountryView.prototype.render = function (country) {
   ul.appendChild("li")
 };
 
+CountryView.prototype.renderList = function (country) {
+  const select = document.querySelector('#countryDropDown');
+  select.innerText = country.name;
+};
+
 CountryView.prototype.clear = function () {
   this.countries = [];
   const ul = document.querySelector('#bucketCountries');

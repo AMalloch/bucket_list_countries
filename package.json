@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && webpack -w"
+    "build": "webpack -w"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "mongodb": "^3.0.7",
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "webpack": "^3.11.0"
   }
 }
