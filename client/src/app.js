@@ -16,9 +16,28 @@ const populateDropDownMenu = function(allCountries){
   });
 };
 
+const getCountry = function (countries) {
+  const selectedCountry =document.querySelector('#countryDropDown');
+  selectedCountry.addEventListener('change',function() {
+    let country = countries[this.value];
+    return country;
+  })
+}
+
+
+const saveButtonClicked = function(getCountry){
+  const countryToSave = getCountry;
+  debugger;
+  request.post(saveButtonClicked, countryToSave);
+  countryView.addCountry(countryToSave);
+}
+
 
 const appStart = function(){
   request.get(populateDropDownMenu);
+  request.get(getCountry)
+  const createSaveButton = document.querySelector('#saveButton');
+  createSaveButton.addEventListener("click", saveButtonClicked);
 }
 
 
