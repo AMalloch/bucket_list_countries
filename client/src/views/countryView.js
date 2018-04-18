@@ -4,7 +4,7 @@ const CountryView = function(){
 
 CountryView.prototype.addCountry = function (country) {
   this.countries.push(country);
-  this.render(country);
+  this.render(country.name);
 };
 
 CountryView.prototype.render = function (country) {

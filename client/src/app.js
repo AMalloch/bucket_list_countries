@@ -1,5 +1,6 @@
 const Request = require('./services/request.js');
 const request = new Request('https://restcountries.eu/rest/v2/all');
+const dbRequest = new Request('http://localhost:3000/bucket_list');
 
 const CountryView = require('./views/countryView.js')
 
@@ -19,17 +20,25 @@ const populateDropDownMenu = function(allCountries){
 const getCountry = function (countries) {
   const selectedCountry =document.querySelector('#countryDropDown');
   selectedCountry.addEventListener('change',function() {
-    let country = countries[this.value];
-    countryName =  country.name;
-    return countryName;
+    country = countries[this.value];
+    // countryName =  country.name;
+    return country;
   })
 }
 
-
 const saveButtonClicked = function(getCountry){
-  const countryToSave = countryName;
-  request.post(saveButtonClicked, countryToSave);
-  countryView.addCountry(countryToSave)
+  const countryToSave = {
+    name: country.name,
+    latlng: country.latlng,
+    region: country.region,
+    subregion: country.subregion
+  };
+  dbRequest.post(createRequestComplete, countryToSave);
+};
+
+const createRequestComplete = function(responce){
+  countryView.addCountry(country);
+  console.log(responce);
 }
 
 
