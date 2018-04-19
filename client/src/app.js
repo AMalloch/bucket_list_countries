@@ -74,7 +74,7 @@ const appStart = function(){
 const initialize = function(){
   const container = document.getElementById('mapDiv');
   const centre = {lat: 0, lng: 0};
-  const zoom = 2;
+  const zoom = 5;
   map = new MapWrapper(container, centre, zoom);
 
 }
