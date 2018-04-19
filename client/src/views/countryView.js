@@ -3,6 +3,10 @@ const CountryView = function(){
 };
 
 CountryView.prototype.addCountry = function (country) {
+  debugger;
+  if(this.countries.includes(country)){
+    return;
+  }
   this.countries.push(country);
   this.render(country.name);
 };
