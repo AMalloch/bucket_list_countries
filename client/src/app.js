@@ -5,6 +5,14 @@ const MapWrapper = require('./views/mapWrapper.js')
 const CountryView = require('./views/countryView.js')
 const countryView = new CountryView();
 
+const getDbRequestComplete = function(allCountriesDb){
+  for(country of allCountriesDb){
+    countryView.addCountry(country);
+    debugger;
+  };
+};
+
+
 const populateDropDownMenu = function(allCountries){
   const select = document.querySelector('#countryDropDown');
   const defaultOption = document.createElement('option');
@@ -39,7 +47,8 @@ const saveButtonClicked = function(getCountry){
     name: country.name,
     latlng: country.latlng,
     region: country.region,
-    subregion: country.subregion
+    subregion: country.subregion,
+    flag: country.flag
   };
   map.addMarker({lat: country.latlng[0], lng: country.latlng[1]})
   dbRequest.post(createRequestComplete, countryToSave);
@@ -61,6 +70,7 @@ const deleteButtonClicked = function() {
 const appStart = function(){
   request.get(populateDropDownMenu);
   request.get(getCountry)
+  dbRequest.get(getDbRequestComplete)
   const createSaveButton = document.querySelector('#saveButton');
   createSaveButton.addEventListener("click", saveButtonClicked);
   // createSaveButton.addEventListener('click', addPin);
