@@ -1,9 +1,8 @@
 const Request = require('./services/request.js');
 const request = new Request('https://restcountries.eu/rest/v2/all');
 const dbRequest = new Request('http://localhost:3000/bucket_list');
-
+const MapWrapper = require('./views/mapWrapper.js')
 const CountryView = require('./views/countryView.js')
-
 const countryView = new CountryView();
 
 
@@ -24,6 +23,11 @@ const getCountry = function (countries) {
     // countryName =  country.name;
     return country;
   })
+}
+
+const addPin = function(getCountry, map){
+  const center = {lat: country.latlng[0], lng: country.latlng[1]}
+  map.addMarker(center)
 }
 
 const saveButtonClicked = function(getCountry){
@@ -55,10 +59,21 @@ const appStart = function(){
   request.get(getCountry)
   const createSaveButton = document.querySelector('#saveButton');
   createSaveButton.addEventListener("click", saveButtonClicked);
+  createSaveButton.addEventListener('click', addPin);
   const deleteButton = document.querySelector('#deleteButton');
   deleteButton.addEventListener("click", deleteButtonClicked);
 };
 
+const initialize = function(){
+  const container = document.getElementById('mapDiv');
+  const centre = {lat: 0, lng: 0};
+  const zoom = 2;
+  const map = new MapWrapper(container, centre, zoom);
+
+}
+
+
 
 
 document.addEventListener('DOMContentLoaded', appStart);
+document.addEventListener('DOMContentLoaded', initialize);
