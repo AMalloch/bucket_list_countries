@@ -2,18 +2,58 @@
   height: 400px;
   width: 100%;
   margin: auto;
+  margin-bottom: 0;
+  padding:0;
 }
 
+#dropdownSection {
+  background-color: #e0d1b2;
+  font-family: 'Exo 2', sans-serif;
+  display: flex;
+  justify-content: center;
+  height:60px;
+}
+
+#dropdownSection select{
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: 'Exo 2', sans-serif;
+  background-color: #b7d3c3;
+  border: ridge 1px grey;
+  font-size: 20px;
+}
+
+#dropdownSection button {
+  font-family: 'Exo 2', sans-serif;
+  margin-left: 10px;
+  width: 70px;
+  background-color: #b7d3c3;
+  border: ridge 1px grey;
+  font-size:20px;
+}
 
 #mapContainer {
   border: solid black 2px;
   background-color: grey;
 }
 
+#bucketlistContainer {
+  background-color: #FFF7AE;
+  display:flex;
+  height: 300px;
+  justify-content: center;
+  font-family: 'Exo 2', sans-serif;
+}
+
 body{
   margin: 0;
   padding:0;
 }
+
+
+
+
 #bucketCountries li{
   display: inline-block;
   margin-left: 20px;
