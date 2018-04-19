@@ -8,6 +8,11 @@ const countryView = new CountryView();
 
 const populateDropDownMenu = function(allCountries){
   const select = document.querySelector('#countryDropDown');
+  const defaultOption = document.createElement('option');
+  defaultOption.innerText = 'Select a country to add to bucket list';
+  defaultOption.disabled=true;
+  defaultOption.selected = true;
+  select.appendChild(defaultOption);
   allCountries.forEach(function(country,index){
     let option = document.createElement("option")
     option.innerText = country.name
