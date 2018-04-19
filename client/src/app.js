@@ -30,10 +30,10 @@ const getCountry = function (countries) {
   })
 }
 
-const addPin = function(getCountry, map){
-  const center = {lat: country.latlng[0], lng: country.latlng[1]}
-  map.addMarker(center)
-}
+// const addPin = function(getCountry){
+//   const center = {lat: country.latlng[0], lng: country.latlng[1]}
+//   map.addMarker(center)
+// }
 
 const saveButtonClicked = function(getCountry){
   const countryToSave = {
@@ -42,6 +42,7 @@ const saveButtonClicked = function(getCountry){
     region: country.region,
     subregion: country.subregion
   };
+  map.addMarker({lat: country.latlng[0], lng: country.latlng[1]})
   dbRequest.post(createRequestComplete, countryToSave);
 };
 
@@ -64,16 +65,17 @@ const appStart = function(){
   request.get(getCountry)
   const createSaveButton = document.querySelector('#saveButton');
   createSaveButton.addEventListener("click", saveButtonClicked);
-  createSaveButton.addEventListener('click', addPin);
+  // createSaveButton.addEventListener('click', addPin);
   const deleteButton = document.querySelector('#deleteButton');
   deleteButton.addEventListener("click", deleteButtonClicked);
+  initialize();
 };
 
 const initialize = function(){
   const container = document.getElementById('mapDiv');
   const centre = {lat: 0, lng: 0};
   const zoom = 2;
-  const map = new MapWrapper(container, centre, zoom);
+  map = new MapWrapper(container, centre, zoom);
 
 }
 
@@ -81,4 +83,4 @@ const initialize = function(){
 
 
 document.addEventListener('DOMContentLoaded', appStart);
-document.addEventListener('DOMContentLoaded', initialize);
+// document.addEventListener('DOMContentLoaded', initialize
