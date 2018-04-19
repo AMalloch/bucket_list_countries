@@ -3,19 +3,23 @@ const CountryView = function(){
 };
 
 CountryView.prototype.addCountry = function (country) {
-  debugger;
   if(this.countries.includes(country)){
     return;
   }
   this.countries.push(country);
-  this.render(country.name);
+  this.render(country);
 };
 
 CountryView.prototype.render = function (country) {
   const ul = document.querySelector('#bucketCountries');
-  const li = document.createElement('li');
-  li.innerText = country;
-  ul.appendChild(li)
+  const liName = document.createElement('li');
+  const imgFlag = document.createElement('IMG');
+  liName.innerText = country.name;
+  imgFlag.setAttribute("src", country.flag);
+  imgFlag.setAttribute("width", "30");
+  imgFlag.setAttribute("height", "20");
+  ul.appendChild(liName)
+  ul.appendChild(imgFlag)
 };
 
 CountryView.prototype.renderList = function (country) {

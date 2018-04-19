@@ -2,5 +2,17 @@
   height: 600px;
   width: 1230px;
   margin: auto;
+}
 
+#bucketCountries li{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#bucketCountries img{
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin-left: 20px;
 }
