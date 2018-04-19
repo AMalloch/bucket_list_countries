@@ -41,14 +41,23 @@ const createRequestComplete = function(responce){
   console.log(responce);
 }
 
+const deleteRequestComplete = function() {
+  countryView.clear();
+}
+
+const deleteButtonClicked = function() {
+  dbRequest.delete(deleteRequestComplete);
+}
+
 
 const appStart = function(){
   request.get(populateDropDownMenu);
   request.get(getCountry)
   const createSaveButton = document.querySelector('#saveButton');
   createSaveButton.addEventListener("click", saveButtonClicked);
-}
-
+  const deleteButton = document.querySelector('#deleteButton');
+  deleteButton.addEventListener("click", deleteButtonClicked);
+};
 
 
 
