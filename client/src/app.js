@@ -8,10 +8,9 @@ const countryView = new CountryView();
 const getDbRequestComplete = function(allCountriesDb){
   for(country of allCountriesDb){
     countryView.addCountry(country);
-    debugger;
+    map.addMarker({lat: country.latlng[0], lng: country.latlng[1]});
   };
 };
-
 
 const populateDropDownMenu = function(allCountries){
   const select = document.querySelector('#countryDropDown');
@@ -64,6 +63,7 @@ const deleteRequestComplete = function() {
 }
 
 const deleteButtonClicked = function() {
+  map.clearMap();
   dbRequest.delete(deleteRequestComplete);
 }
 
