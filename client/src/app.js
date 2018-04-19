@@ -5,7 +5,6 @@ const MapWrapper = require('./views/mapWrapper.js')
 const CountryView = require('./views/countryView.js')
 const countryView = new CountryView();
 
-
 const populateDropDownMenu = function(allCountries){
   const select = document.querySelector('#countryDropDown');
   const defaultOption = document.createElement('option');
@@ -59,7 +58,6 @@ const deleteButtonClicked = function() {
   dbRequest.delete(deleteRequestComplete);
 }
 
-
 const appStart = function(){
   request.get(populateDropDownMenu);
   request.get(getCountry)
@@ -76,10 +74,7 @@ const initialize = function(){
   const centre = {lat: 0, lng: 0};
   const zoom = 5;
   map = new MapWrapper(container, centre, zoom);
-
 }
-
-
 
 
 document.addEventListener('DOMContentLoaded', appStart);

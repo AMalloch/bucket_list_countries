@@ -4,6 +4,7 @@
   margin: auto;
 }
 
+
 #mapContainer {
   border: solid black 2px;
   background-color: grey;
@@ -12,4 +13,17 @@
 body{
   margin: 0;
   padding:0;
+}
+#bucketCountries li{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#bucketCountries img{
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin-left: 20px;
+
 }
