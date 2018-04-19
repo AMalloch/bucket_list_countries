@@ -6,27 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
   <script type="text/javascript" src="mapWrapper.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <title>Bucket List</title>
   <script src="bundle.js"></script>
   <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-
-  <div id="mapDiv" class="container"></div>
-
+  <div id="mapContainer">
+    <div id="mapDiv"></div>
+  </div>
   <div id="mainBody">
-    <h3>List of countries</h3>
-    <select id="countryDropDown">Countries</select>
+    <div id= "dropdownSection">
+      <h3>What countries do you want to visit?</h3>
+      <select id="countryDropDown">Countries</select>
 
-    <button type="submit" id="saveButton">Save</button>
-    <button type="submit" id="deleteButton">Delete</button>
-
-
-    <div id="bucketList" class="container">
-      <h3>Countries on Bucket List</h3>
-      <ul id="bucketCountries"></ul>
-
+      <button type="submit" id="saveButton">Save</button>
+      <button type="submit" id="deleteButton">Delete</button>
+    </div>
+    <div id ="bucketlistContainer">
+      <div id="bucketList" class="container">
+        <h3>Countries on Bucket List</h3>
+        <ul id="bucketCountries"></ul>
+      </div>
     </div>
   </div>
 

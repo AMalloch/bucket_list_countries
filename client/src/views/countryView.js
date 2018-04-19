@@ -29,6 +29,7 @@ CountryView.prototype.renderList = function (country) {
 
 CountryView.prototype.clear = function () {
   this.countries = [];
+  this.markers = [];
   const ul = document.querySelector('#bucketCountries');
   ul.innerHTML = '';
 };
