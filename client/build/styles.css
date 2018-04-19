@@ -49,14 +49,15 @@
 body{
   margin: 0;
   padding:0;
+  text-shadow: 1px 1px white;
 }
-
-
 
 
 #bucketCountries li{
   display: inline-block;
   margin-left: 20px;
+  font-family: 'Rock Salt', cursive;
+  font-size: 22px;
 }
 
 #bucketCountries img{
@@ -65,5 +66,10 @@ body{
   border-width: 1px;
   border-color: black;
   margin-left: 20px;
+}
 
+#bucketlistHeader{
+  display: flex;
+  justify-content: center;
+  font-style: 30px;
 }

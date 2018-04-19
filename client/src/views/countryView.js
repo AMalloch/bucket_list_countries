@@ -16,8 +16,8 @@ CountryView.prototype.render = function (country) {
   const imgFlag = document.createElement('IMG');
   liName.innerText = country.name;
   imgFlag.setAttribute("src", country.flag);
-  imgFlag.setAttribute("width", "30");
-  imgFlag.setAttribute("height", "20");
+  imgFlag.setAttribute("width", "40");
+  imgFlag.setAttribute("height", "30");
   ul.appendChild(liName)
   ul.appendChild(imgFlag)
 };
